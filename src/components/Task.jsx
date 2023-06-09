@@ -9,7 +9,9 @@ const Task = () => {
 
   const fetchTasks = async () => {
     try {
-      const { data } = await axios.get("https://api.adviceslip.com/advice");
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_API_URL}`
+      );
       setTask(data.slip);
     } catch (_error) {}
   };
