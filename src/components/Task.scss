@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; // Set the height of the parent container
+  background-image: url('../assets/imagens/Background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color:rgb(0,0,0,0.5) ;
+background-blend-mode: color ;
+}
+
+.task-container {
+  background-color: rgba(255, 255, 255, 0.100); // Set a semi-transparent background color
+  backdrop-filter: blur(15px); // Apply a blur filter to the content behind the element
+  -webkit-backdrop-filter: blur(15px);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
