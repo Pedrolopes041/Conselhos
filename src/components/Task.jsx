@@ -1,24 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import * as React from "react";
+import Button from "@mui/material/Button";
 
-import "./Task.scss"
+import "./Task.scss";
 
 const Task = () => {
-
   const [task, setTask] = useState([]);
 
   const fetchTasks = async () => {
     try {
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_API_URL}`
-      );
+      const { data } = await axios.get(`${process.env.REACT_APP_API_URL}`);
       setTask(data.slip);
     } catch (_error) {}
   };
-
-  useEffect(() => {
-    fetchTasks();
-  }, []);
 
   return (
     <div className="container">
@@ -26,11 +21,13 @@ const Task = () => {
         <headline>Advice of the day :</headline>
         <div className="last-task">
           <p>{task.advice}</p>
+          <Button onClick={fetchTasks} variant="contained">
+            Advice
+          </Button>
         </div>
       </div>
     </div>
   );
-
 };
 
 export default Task;
